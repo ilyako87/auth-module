@@ -1,0 +1,15 @@
+package org.jakot.modules.authmodule.config.security
+
+const val CAN_READ_OWN_DATA = "CAN_READ_OWN_DATA"
+const val CAN_READ_ANY_DATA = "CAN_READ_ANY_DATA"
+const val CAN_UPDATE_OWN_DATA = "CAN_UPDATE_OWN_DATA"
+const val CAN_UPDATE_ANY_USER = "CAN_UPDATE_ANY_USER"
+const val CAN_ADD_NEW_USER = "CAN_ADD_NEW_USER"
+const val CAN_DELETE_USER = "CAN_DELETE_USER"
+const val CAN_UPDATE_SYSTEM_SETTINGS = "CAN_UPDATE_SYSTEM_SETTINGS"
+const val HAS_ACCESS_TO_ADMIN_PANEL = "HAS_ACCESS_TO_ADMIN_PANEL"
+
+val allPrivileges: Set<String> = setOf(CAN_READ_OWN_DATA, CAN_READ_ANY_DATA, CAN_UPDATE_OWN_DATA, CAN_UPDATE_ANY_USER, CAN_ADD_NEW_USER, CAN_DELETE_USER,
+    CAN_UPDATE_SYSTEM_SETTINGS, HAS_ACCESS_TO_ADMIN_PANEL)
+val adminPrivileges: Set<String> = setOf<String>().plus(allPrivileges)
+val userPrivileges: Set<String> = setOf(CAN_READ_OWN_DATA, CAN_UPDATE_OWN_DATA)

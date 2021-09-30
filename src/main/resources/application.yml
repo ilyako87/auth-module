@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:/home/ilya/IDEA_Projects/auth-module/auth-db2;AUTO_SERVER=TRUE
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+module:
+  auth:
+    security:
+      user-by-default: admin
+    next-val: asdas
