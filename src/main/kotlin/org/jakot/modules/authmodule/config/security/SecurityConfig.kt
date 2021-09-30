@@ -2,7 +2,6 @@ package org.jakot.modules.authmodule.config.security
 
 import org.jakot.modules.authmodule.config.InitService
 import org.jakot.modules.authmodule.db.services.AppPropertyService
-import org.jakot.modules.authmodule.http.mapping.AUTH_ADD_USER
 import org.jakot.modules.authmodule.http.mapping.UPDATE_USER
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -49,14 +48,11 @@ class SecurityConfig(val appPropertyService: AppPropertyService,
     override fun configure(security: HttpSecurity) {
         security
             .authorizeRequests()
-            .anyRequest()
+                .antMatchers(UPDATE_USER)
             .denyAll()
-//            .authorizeRequests()
-//                .antMatchers(UPDATE_USER)
-//            .denyAll()
-//            .and().logout()
-//                .permitAll()
-//            .and()
-//                .httpBasic()
+            .and().logout()
+                .permitAll()
+            .and()
+                .httpBasic()
     }
 }

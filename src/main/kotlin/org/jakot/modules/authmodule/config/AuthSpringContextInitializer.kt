@@ -7,5 +7,7 @@ import org.springframework.web.context.ConfigurableWebApplicationContext
 @Slf4j
 class AuthSpringContextInitializer: ApplicationContextInitializer<ConfigurableWebApplicationContext> {
 
-    override fun initialize(applicationContext: ConfigurableWebApplicationContext) {}
+    override fun initialize(applicationContext: ConfigurableWebApplicationContext) {
+        //
+    }
 }
